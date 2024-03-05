@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Placement Prediction</title>
+  </head>
+  <body>
+    <div class="intro">
+      <h1>Welcome to Placement Prediction App</h1>
+    </div>
+    <form action="{{ url_for('predict')}}" name="form" method="GET">
+      <div class='details'>
+        <div class='box'>
+
+          <p>NAME</p>
+          <input type="text"  name="name"  id="name" min="0" placeholder='ENTER YOUR NAME' pattern="^[0-9]\d*$" required/>
+            </div>
+            <div class='box'>
+
+        
+              <p>
+                BRANCH
+              </p required>
+              <select name="branch" id="branch" placeholder="Select" required>
+                <option value="" disabled selected>Please select</option>
+                <option >CSE</option>
+                <option >ISE</option>
+                <option >ECE</option>
+                <option >CSE-AI</option>
+                <option >MECHANICAL ENGINEERING</option>
+                <option >CIVIL ENGINEERIMG</option>
+                <option >CSE-DS</option>
+                <option >CSE-CY</option>
+              </select>
+            </div>
+            
+        <div class='box'>
+
+      <p>CGPA</p>
+      <input type="number" step="1" name="cgpa"  id="cgpa" min="0" placeholder='ENTER YOUR CGPA' pattern="^[0-9]\d*$" required/>
+        </div>
+        <div class='box'>
+          <p>SKILLS</p>
+          <input type="text" name="skills"  id="skills" min="0" placeholder='ENTER YOUR SKILLS' pattern="^[0-9]\d*$" required/>
+            </div>
+            <div class='box'>
+            <p>
+              INTERNSHIP
+            </p required>
+            <select name="internship" id="internship" placeholder="Select" required>
+              <option value="" disabled selected>Please select</option>
+              <option value='1' selected>Yes</option>
+              <option value='0'>No</option>
+              
+              
+            </select>
+          </div>
+          <div class='box'>
+            <p>
+              HACKATHON
+            </p required>
+            <select name="hackathon" id="hackathon" placeholder="Select" required>
+              <option value="" disabled selected>Please select</option>
+              <option value='1' selected>Yes</option>
+              <option value='0'>No</option>
+              
+              
+            </select>
+          </div>
+        <div class='box'>
+      <p>MAJOR PROJECTS</p>
+      <input type="number" step="1" name="projects" placeholder='ENTER NUMBER OF MAJOR PROJECTS' id="projects" min="0" pattern="^[0-9]\d*$" required/>
+        </div>
+        <div class='box'>
+      <p>CERTIFICATIONS</p>
+      <input type="number" step="1" name="workshops" placeholder='ENTER NUMBER OF CERTIFICATIONS' id="workshops" min="0" pattern="^[0-9]\d*$" required/>
+        </div>
+        <div class='box'>
+      <p>MINI PROJECTS</p>
+      <input type="number" step="1" name="mini_projects" placeholder='ENTER NUMBER OF MINI PROJECTS' id="mini_projects" min="0" pattern="^[0-9]\d*$" required/>
+        </div>
+        
+        <div class='box'>
+      <p>COMMUNICATION RATING</p>
+      <input type="number" step="1" name="communication_skills" placeholder='ENTER YOUR COMMUNICATION RATING' id="communication_skills" min="0" pattern="^[0-9]\d*$" required/>
+        </div>
+       
+    <div class='box'>
+      <p>12 th PERCENTAGE</p>
+      <input type="number" step="1" name="tw_percentage" placeholder='ENTER YOUR 12TH PERCENTAGE' id="tw_percentage" min="0" pattern="^[0-9]\d*$" required/>
+    </div>
+    <div class='box'>
+      <p>10 th PERCENTAGE</p>
+      <input type="number" step="1" name="te_percentage" placeholder='ENTER YOUR 10TH PERCENTAGE' id="te_percentage" min="0" pattern="^[0-9]\d*$" required/>
+    </div>
+    <div class='box'>
+      <p>BACKLOGS</p>
+      <input type="number" step="1" name="backlogs" placeholder='ENTER NUMBER OF BACKLOGS' id="backlogs" min="0" pattern="^[0-9]\d*$" required/>
+    </div>
+      
+      <button type="submit" value="submit" onclick="submitForm()">PREDICT</button>
+      
+      <script>
+        function submitForm(){
+            document.form.submit();
+            //document.form.reset();
+        }
+    </script>
+    </form>
+    <div class="end">
+      
+    </div>
+  </body>
+</html>
+
+

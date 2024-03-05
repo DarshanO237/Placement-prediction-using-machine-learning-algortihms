@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Placement Prediction</title>
+  </head>
+  <body>
+    <div class="intro">
+      <h1>Welcome to Placement Prediction App</h1>
+    </div>
+    <form action="{{ url_for('predict')}}" name="form" method="GET">
+
+      <p>Enter CGPA</p>
+      <input type="number" step="1" name="cgpa" id="cgpa" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>MAJOR PROJECTS</p>
+      <input type="number" step="1" name="projects" id="projects" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>WORKSHOPS OR CERTIFICATIONS</p>
+      <input type="number" step="1" name="workshops" id="workshops" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>MINI PROJECTS</p>
+      <input type="number" step="1" name="mini_projects" id="mini_projects" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>SKILLS</p>
+      <input type="number" step="1" name="skills" id="skills" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>COMMUNICATION RATING</p>
+      <input type="number" step="1" name="communication_skills" id="communication_skills" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+
+        
+      <p>
+        INTERNSHIP
+      </p required>
+      <select name="internship" id="internship" placeholder="Select" required>
+        <option value="" disabled selected>Please select</option>
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+      </select>
+      <br />
+      <p>
+        HACKATHON
+      </p required>
+      <select name="hackathon" id="hackathon" placeholder="Select" required>
+        <option value="" disabled selected>Please select</option>
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+      </select>
+      <br />
+      <p>12 th PERCENTAGE</p>
+      <input type="number" step="1" name="tw_percentage" id="tw_percentage" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      <p>10 th PERCENTAGE</p>
+      <input type="number" step="1" name="te_percentage" id="te_percentage" min="0" pattern="^[0-9]\d*$" required/>
+      <br />
+      
+      <button type="submit" value="submit" onclick="submitForm()">Submit</button>
+      
+      <script>
+        function submitForm(){
+            document.form.submit();
+            //document.form.reset();
+        }
+    </script>
+    </form>
+    <div class="end">
+      <h2>This Website uses Random Forest Model to predict results</h2>
+    </div>
+  </body>
+</html>
+
+
